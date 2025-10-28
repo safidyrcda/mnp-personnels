@@ -9,17 +9,9 @@ export default function NotFound() {
       <Card className="w-full max-w-md text-center">
         <CardHeader>
           <CardTitle className="text-4xl font-bold text-[#d38800]">404</CardTitle>
-          <CardDescription className="text-lg">Personnel non trouvé</CardDescription>
+          <CardDescription className="text-lg">Page non trouvé</CardDescription>
         </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground mb-6">La matricule demandée n'existe pas dans notre base de données.</p>
-          <Link href="/">
-            <Button className="w-full">
-              <Home className="mr-2 h-4 w-4" />
-              Retour à l'accueil
-            </Button>
-          </Link>
-        </CardContent>
+        
       </Card>
     </main>
   )

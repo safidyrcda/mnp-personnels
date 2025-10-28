@@ -65,22 +65,21 @@ export function CSVImport() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Import Personnel from CSV</CardTitle>
+        <CardTitle>Importer le personnel depuis un fichier CSV</CardTitle>
         <CardDescription>
-          Upload a CSV file with columns: Matricule, Nom, Nom Complet, POSTE ABR, Département/Unité/Programme/Projet,
-          Direction
+         Téléversez un fichier CSV contenant les colonnes suivantes : matricule, nom, nomcomplet, posteabr, departement, direction
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="csv-file">CSV File</Label>
+            <Label htmlFor="csv-file">Fichier csv</Label>
             <Input id="csv-file" type="file" accept=".csv" onChange={handleFileChange} disabled={loading} />
             {file && <p className="text-sm text-muted-foreground">{file.name}</p>}
           </div>
           <Button type="submit" disabled={loading || !file} className="w-full">
             <Upload className="mr-2 h-4 w-4" />
-            {loading ? "Importing..." : "Import CSV"}
+            {loading ? "Importation en cours..." : "Importer le fichier CSV"}
           </Button>
         </form>
       </CardContent>

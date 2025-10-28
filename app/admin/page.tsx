@@ -16,15 +16,15 @@ export default function AdminPage() {
       <div className="container mx-auto p-4">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-[#d38800]">Admin Dashboard</h1>
-            <p className="text-muted-foreground">Manage personnel and uploads</p>
+            <h1 className="text-3xl font-bold text-[#d38800]">Administration</h1>
+            {/* <p className="text-muted-foreground">Manage personnel and uploads</p> */}
           </div>
-          <Link href="/">
+          {/* <Link href="/">
             <Button variant="outline">
               <LogOut className="mr-2 h-4 w-4" />
               Back to Home
             </Button>
-          </Link>
+          </Link> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -33,11 +33,11 @@ export default function AdminPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Users className="h-5 w-5" />
-                  Personnel
+                  Personnels
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Manage personnel records</p>
+                <p className="text-muted-foreground">Gerer les informations des personnels</p>
               </CardContent>
             </Card>
           </Link>
@@ -46,15 +46,15 @@ export default function AdminPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Upload className="h-5 w-5" />
-                Import
+                Importer
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">Import from CSV</p>
+              <p className="text-muted-foreground">Importer des personnels a partir d'un fichier CSV</p>
             </CardContent>
           </Card>
 
-          <Card>
+          {/* <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Settings className="h-5 w-5" />
@@ -64,18 +64,18 @@ export default function AdminPage() {
             <CardContent>
               <p className="text-muted-foreground">System settings</p>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="import">
               <Upload className="mr-2 h-4 w-4" />
-              Import CSV
+              Importer le fichier CSV
             </TabsTrigger>
             <TabsTrigger value="personnel">
               <Users className="mr-2 h-4 w-4" />
-              Personnel List
+              Liste des personnels
             </TabsTrigger>
           </TabsList>
 
@@ -86,14 +86,14 @@ export default function AdminPage() {
           <TabsContent value="personnel" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>Personnel Management</CardTitle>
-                <CardDescription>View and manage all personnel records</CardDescription>
+                <CardTitle>Gestion des informations des personnels</CardTitle>
+                <CardDescription>Afficher et gérer le personnel</CardDescription>
               </CardHeader>
               <CardContent>
                 <Link href="/admin/personnel">
                   <Button>
                     <Users className="mr-2 h-4 w-4" />
-                    Go to Personnel Management
+                    Accéder à la gestion du personnel
                   </Button>
                 </Link>
               </CardContent>

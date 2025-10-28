@@ -64,11 +64,11 @@ export function ImageUpload({ matricule, currentImage, onUploadSuccess }: ImageU
         return
       }
 
-      toast.success("Image uploaded successfully")
+      toast.success("Image téléchargée avec succès")
       onUploadSuccess?.(data.photoUrl)
       setFile(null)
     } catch (error) {
-      toast.error("An error occurred during upload")
+      toast.error("Une erreur est survenue lors du téléchargement de l'image")
       console.error(error)
     } finally {
       setLoading(false)
@@ -78,8 +78,8 @@ export function ImageUpload({ matricule, currentImage, onUploadSuccess }: ImageU
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Upload Photo</CardTitle>
-        <CardDescription>Upload a profile photo for this personnel</CardDescription>
+        <CardTitle>Importer une photo</CardTitle>
+        <CardDescription>Importer la photo de profil de ce personnel</CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -99,12 +99,12 @@ export function ImageUpload({ matricule, currentImage, onUploadSuccess }: ImageU
             </div>
           )}
           <div className="space-y-2">
-            <Label htmlFor="image-file">Image File</Label>
+            <Label htmlFor="image-file">Image</Label>
             <Input id="image-file" type="file" accept="image/*" onChange={handleFileChange} disabled={loading} />
           </div>
           <Button type="submit" disabled={loading || !file} className="w-full">
             <Upload className="mr-2 h-4 w-4" />
-            {loading ? "Uploading..." : "Upload Image"}
+            {loading ? "Importation..." : "Importer l'image"}
           </Button>
         </form>
       </CardContent>

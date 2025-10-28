@@ -77,14 +77,14 @@ export default function EditPersonnelPage() {
       })
 
       if (!response.ok) {
-        toast.error("Failed to update personnel")
+        toast.error("Échec de la mise à jour du personnel")
         return
       }
 
-      toast.success("Personnel updated successfully")
+      toast.success("Personnel mis à jour avec succès")
       router.push("/admin/personnel")
     } catch (error) {
-      toast.error("An error occurred")
+      toast.error("Une erreur est survenue")
       console.error(error)
     } finally {
       setSaving(false)
@@ -94,7 +94,7 @@ export default function EditPersonnelPage() {
   if (loading) {
     return (
       <main className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-muted-foreground">Loading...</p>
+        <p className="text-muted-foreground">Chargement...</p>
       </main>
     )
   }
@@ -102,7 +102,7 @@ export default function EditPersonnelPage() {
   if (!personnel) {
     return (
       <main className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-muted-foreground">Personnel not found</p>
+        <p className="text-muted-foreground">Personnel non trouvé</p>
       </main>
     )
   }
@@ -112,13 +112,13 @@ export default function EditPersonnelPage() {
       <div className="container mx-auto p-4 max-w-2xl">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-[#d38800]">Edit Personnel</h1>
+            <h1 className="text-3xl font-bold text-[#d38800]">Modifier les informations du personnel</h1>
             <p className="text-muted-foreground">{personnel.nomComplet}</p>
           </div>
           <Link href="/admin/personnel">
             <Button variant="outline">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back
+              Retour
             </Button>
           </Link>
         </div>
@@ -127,7 +127,7 @@ export default function EditPersonnelPage() {
           <div className="md:col-span-2 space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Personnel Information</CardTitle>
+                <CardTitle>Informations sur le personnel</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -181,7 +181,7 @@ export default function EditPersonnelPage() {
                   </div>
                   <Button type="submit" disabled={saving} className="w-full">
                     <Save className="mr-2 h-4 w-4" />
-                    {saving ? "Saving..." : "Save Changes"}
+                    {saving ? "Enregistrement..." : "Enregistrer les modifications"}
                   </Button>
                 </form>
               </CardContent>

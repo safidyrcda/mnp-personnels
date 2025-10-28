@@ -75,50 +75,50 @@ export default function PersonnelManagementPage() {
       <div className="container mx-auto p-4">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-[#d38800]">Personnel Management</h1>
-            <p className="text-muted-foreground">Manage all personnel records</p>
+            <h1 className="text-3xl font-bold text-[#d38800]">Gestion des informations des personnels</h1>
+            <div className="text-muted-foreground">Afficher et gérer les personnels</div>
           </div>
           <Link href="/admin">
             <Button variant="outline">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Admin
+              Retour à l'administration
             </Button>
           </Link>
         </div>
 
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle>Search Personnel</CardTitle>
+            <CardTitle>Rechercher</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex gap-2">
               <div className="flex-1">
                 <Input
-                  placeholder="Search by matricule, name, or position..."
+                  placeholder="Rechercher a partir de: matricule, name, or position..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
-              <Link href="/admin/personnel/new">
+              {/* <Link href="/admin/personnel/new">
                 <Button>
                   <Plus className="mr-2 h-4 w-4" />
                   Add Personnel
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Personnel List</CardTitle>
-            <CardDescription>{filteredPersonnel.length} records found</CardDescription>
+            <CardTitle>Liste des personnels</CardTitle>
+            <CardDescription>{filteredPersonnel.length} personnels</CardDescription>
           </CardHeader>
           <CardContent>
             {loading ? (
-              <p className="text-muted-foreground">Loading...</p>
+              <p className="text-muted-foreground">Chargmenent...</p>
             ) : filteredPersonnel.length === 0 ? (
-              <p className="text-muted-foreground">No personnel found</p>
+              <p className="text-muted-foreground">Auccun personnel</p>
             ) : (
               <div className="overflow-x-auto">
                 <Table>
@@ -147,9 +147,9 @@ export default function PersonnelManagementPage() {
                                 <Edit className="h-4 w-4" />
                               </Button>
                             </Link>
-                            <Button size="sm" variant="destructive" onClick={() => handleDelete(p.matricule)}>
+                            {/* <Button size="sm" variant="destructive" onClick={() => handleDelete(p.matricule)}>
                               <Trash2 className="h-4 w-4" />
-                            </Button>
+                            </Button> */}
                           </div>
                         </TableCell>
                       </TableRow>

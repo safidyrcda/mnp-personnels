@@ -29,7 +29,7 @@ export default async function PersonnelPage({ params }: PageProps) {
     jobTitle: personnel.posteAbr,
     department: personnel.departement,
     idNumber: personnel.matricule,
-    photo: personnel.photoUrl,
+    photo: personnel.photoUrl ?? undefined,
   }
 
   return (
