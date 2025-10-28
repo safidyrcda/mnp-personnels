@@ -34,7 +34,7 @@ export default async function PersonnelPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 bg-gradient-to-br from-background via-muted/30 to-background">
-      <div className="w-full max-w-6xl mb-4 print:hidden">
+      {/* <div className="w-full max-w-6xl mb-4 print:hidden">
         <Link href="/liste-personnel">
           <Button variant="outline" size="sm" className="gap-2 bg-transparent">
             <ArrowLeft className="h-4 w-4" />
@@ -42,7 +42,7 @@ export default async function PersonnelPage({ params }: PageProps) {
             <span className="sm:hidden">Retour</span>
           </Button>
         </Link>
-      </div>
+      </div> */}
       <StaffIdCard staffData={staffMember} />
     </main>
   )

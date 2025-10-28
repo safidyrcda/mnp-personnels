@@ -50,13 +50,13 @@ export function AuthForm({ mode }: AuthFormProps) {
       console.log(data)
 
       if (!response.ok) {
-        toast.error(data.error || "Authentication failed")
+        toast.error(data.error || "Un erreur est survenue")
         return
       }
 
       setSession(data.user);
 
-      toast.success(mode === "login" ? "Logged in successfully" : "Account created successfully")
+      toast.success(mode === "login" ? "Connexion reussie" : "Account created successfully")
       router.push("/admin")
     } catch (error) {
       toast.error("An error occurred")
@@ -70,9 +70,9 @@ export function AuthForm({ mode }: AuthFormProps) {
   return (
     <Card className="w-full max-w-md">
       <CardHeader>
-        <CardTitle>{mode === "login" ? "Login" : "Create Account"}</CardTitle>
+        <CardTitle>{mode === "login" ? "Connexion" : "Creer un compte"}</CardTitle>
         <CardDescription>
-          {mode === "login" ? "Sign in to your account" : "Create a new account to get started"}
+          {mode === "login" ? "Se connecter" : "Create a new account to get started"}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -88,7 +88,7 @@ export function AuthForm({ mode }: AuthFormProps) {
             <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password">Mot de passe</Label>
             <Input
               id="password"
               name="password"
@@ -99,7 +99,7 @@ export function AuthForm({ mode }: AuthFormProps) {
             />
           </div>
           <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? "Loading..." : mode === "login" ? "Sign In" : "Create Account"}
+            {loading ? "Chargement..." : mode === "login" ? "Se connecter" : "Create Account"}
           </Button>
         </form>
       </CardContent>
