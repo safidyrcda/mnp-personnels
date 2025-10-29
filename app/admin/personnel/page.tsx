@@ -94,7 +94,7 @@ export default function PersonnelManagementPage() {
             <div className="flex gap-2">
               <div className="flex-1">
                 <Input
-                  placeholder="Rechercher a partir de: matricule, name, or position..."
+                  placeholder="Rechercher a partir de: matricule, nom, ou departement..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
