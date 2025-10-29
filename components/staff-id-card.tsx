@@ -26,14 +26,7 @@ export function StaffIdCard({ staffData: initialStaffData }: StaffIdCardProps) {
 
   const [isEditing, setIsEditing] = useState(false)
 
-  const qrData = JSON.stringify({
-    id: staffData.idNumber,
-    name: `${staffData.forename} ${staffData.name}`,
-    position: staffData.jobTitle,
-    department: staffData.department,
-    organization: "Madagascar National Parks",
-  })
-
+  const qrData = "https://staff.parcs-madagascar.com/details/" + staffData.idNumber;  
   const handlePrint = () => {
     window.print()
   }
@@ -65,7 +58,7 @@ export function StaffIdCard({ staffData: initialStaffData }: StaffIdCardProps) {
 
           <div className="flex-1 flex flex-col sm:flex-row gap-4 md:gap-6 items-start">
             {/* Left Side - Photo */}
-            {staffData.photo && (
+            {staffData.photo ? (
               <div className="flex-shrink-0">
                 <div className="relative w-24 h-28 sm:w-28 sm:h-32 md:w-32 md:h-40 rounded-lg overflow-hidden border-3 border-[#d38800] shadow-lg">
                   <Image
@@ -76,7 +69,16 @@ export function StaffIdCard({ staffData: initialStaffData }: StaffIdCardProps) {
                   />
                 </div>
               </div>
-            )}
+            ): (<div className="flex-shrink-0">
+                <div className="relative w-24 h-28 sm:w-28 sm:h-32 md:w-32 md:h-40 rounded-lg overflow-hidden border-3 border-[#d38800] shadow-lg">
+                  <Image
+                    src={"/placeholder.svg"}
+                    alt={`Photo de ${staffData.forename} ${staffData.name}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>)}
 
             {/* Center - Staff Info */}
             <div className="flex-1 space-y-2 sm:space-y-3 md:space-y-4">
