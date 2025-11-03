@@ -60,7 +60,7 @@ export function StaffIdCard({ staffData: initialStaffData }: StaffIdCardProps) {
             {/* Left Side - Photo */}
             {staffData.photo ? (
               <div className="flex-shrink-0">
-                <div className="relative w-24 h-28 sm:w-28 sm:h-32 md:w-32 md:h-40 rounded-lg overflow-hidden border-3 border-[#d38800] shadow-lg">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-28 md:h-28 rounded-lg overflow-hidden border-3 border-[#d38800] shadow-lg">
                   <Image
                     src={staffData.photo || "/placeholder.svg"}
                     alt={`Photo de ${staffData.forename} ${staffData.name}`}
@@ -70,7 +70,7 @@ export function StaffIdCard({ staffData: initialStaffData }: StaffIdCardProps) {
                 </div>
               </div>
             ): (<div className="flex-shrink-0">
-                <div className="relative w-24 h-28 sm:w-28 sm:h-32 md:w-32 md:h-40 rounded-lg overflow-hidden border-3 border-[#d38800] shadow-lg">
+                <div className="relative w-40 h-40 sm:w-28 sm:h-28 md:w-28 md:h-28 rounded-lg overflow-hidden border-3 border-[#d38800] shadow-lg">
                   <Image
                     src={"/placeholder.svg"}
                     alt={`Photo de ${staffData.forename} ${staffData.name}`}

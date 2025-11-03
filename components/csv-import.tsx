@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,10 +8,12 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { toast } from "sonner"
 import { Upload } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export function CSVImport() {
   const [loading, setLoading] = useState(false)
   const [file, setFile] = useState<File | null>(null)
+  const router = useRouter()
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0]
@@ -59,6 +60,7 @@ export function CSVImport() {
       console.error(error)
     } finally {
       setLoading(false)
+      router.push("/admin/personnel")
     }
   }
 
